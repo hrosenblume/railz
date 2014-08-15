@@ -1,3 +1,7 @@
+require 'FileUtils'
+#add help action
+#help action should be designed like bash w/ usage:
+
 def checkArgs(argNum)
 	case
 	when $args.length > argNum
@@ -25,7 +29,12 @@ end
 
 def rm
 	if checkArgs(2)
-		puts "#{$args[1]} removed from /modals"
+		if (File.file?("../modals/#{$args[1]}.html"))
+			FileUtils.rm("../modals/#{$args[1]}.html")
+			puts "#{$args[1]}.html removed from /modals"
+		else
+			puts "No such file -- #{$args[1]}.html"
+		end
 	end
 end
 
