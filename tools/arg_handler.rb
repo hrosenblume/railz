@@ -9,7 +9,6 @@ def fillArgs
 	end 
 end 
 
-#add help action
 def pickAction
 	case $args[0]
 	when "gen"
@@ -20,11 +19,13 @@ def pickAction
 		rm
 	when "ls"
 		ls
+	when "help"
+		help
 	else
 		if ($args.length > 0) 
 			puts "#{$args[0]}: command not found"
 		else 
-			#run help
+			help
 		end
 	end
 end

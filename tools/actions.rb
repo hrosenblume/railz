@@ -1,7 +1,7 @@
 require 'FileUtils'
-#add help action
-#help action should be designed like bash w/ usage:
+require './boilerplate'
 
+#checks for proper argument length
 def checkArgs(argNum)
 	case
 	when $args.length > argNum
@@ -10,14 +10,27 @@ def checkArgs(argNum)
 	when $args.length == argNum
 		return true
 	else
-		puts "You have too few arguments. For help, just run the command './railz help'"
+		puts "You have too few arguments. For help, jusft run the command './railz help'"
 		return false
 	end
 end
 
+#generates new modal with a userdefined id/file name
+#and a userdefined title
 def gen
 	if checkArgs(2)
-		puts "#{$args[1]} generated in /modals"
+		filename = $args[1]
+		if (File.file?("../modals/#{filename}.html"))
+			puts "A modal with this name already exists"
+		else 
+			puts "Please input at title."
+			print ">"
+			title = STDIN.gets.chomp
+			output = File.open( "../modals/#{filename}.html","w" )
+			output << getModal(filename, title)
+			output.close
+			puts "#{filename} generated in /modals"
+		end
 	end
 end
 
@@ -27,9 +40,10 @@ def add
 	end
 end
 
+#removes userdefined modal
 def rm
 	if checkArgs(2)
-		if (File.file?("../modals/#{$args[1]}.html"))
+		if File.file?("../modals/#{$args[1]}.html")
 			FileUtils.rm("../modals/#{$args[1]}.html")
 			puts "#{$args[1]}.html removed from /modals"
 		else
@@ -42,4 +56,8 @@ def ls
 	if checkArgs(1)
 		puts "ls"
 	end
+end
+
+def help
+	puts "This is the help message"
 end
