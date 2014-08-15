@@ -1,0 +1,35 @@
+/*********************************************************************************/
+/* Railz Styles                                                                  */
+/*********************************************************************************/
+.hlight {
+	background-color: #eee;
+	cursor: pointer;
+}
+
+.hlight:hover {
+	background-color: #ffc31c;
+}
+
+.modal-title {
+	font-size: 2em;
+}
+
+.modal-image {
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.modal-video {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
+@media all and (max-width: 420px)  {
+	.modal-video {
+		width: 100%;
+		height: 285px;
+	}	
+}

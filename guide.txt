@@ -1,0 +1,2 @@
+Use the following syntax to add modal annotations:
+<span data-toggle="modal" data-target="#MODAL_NAME" class="hlight">Text Here</span>
