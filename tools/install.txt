@@ -1,0 +1,9 @@
+~~ How to Install ~~
+1. Pull the project
+2. cd to tools directory in railz directory
+3. Run 'chmod 755 railz.rb'
+4. In tools directiory run ./railz.rb [args...]
+
+~~ How to Use Annotations ~~
+In code: <span data-toggle="modal" data-target="#filename" class="hlight">INSERT TEXT HERE</span>
+WHere "filename" is the modal you generated with ./railz.rb gen

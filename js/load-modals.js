@@ -1,10 +1,10 @@
 var content;
 var i;
-var modals = [];
+var modals = [""];
 
-for (i = 0; i < modals.length; i++) {
-	$.get('modals/' + modals[i] + '.html', function(data){
+for (i = 0; i < modals.length-1; i++) {
+	$.get('modals/' + modals[i] + '.html', function(data) {
     	content = data;
-    	$('#models').prepend(content);
+    	$('#modals').prepend(content);
 	});
 }

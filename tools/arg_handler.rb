@@ -13,8 +13,6 @@ def pickAction
 	case $args[0]
 	when "gen"
 		gen
-	when "add"
-		add
 	when "rm"
 		rm
 	when "ls"

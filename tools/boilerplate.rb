@@ -8,10 +8,10 @@ def getModal(name, title)
 	                <h1 class=\"modal-title\">#{title}</h1>
 	            </div>
 	            <div class=\"modal-body\">
-	            	<!-- End -->
+	            	<!-- Insert Code Here -->
 	            </div>
 	            <div class=\"modal-footer\">
-	                <a href=\"#\" class=\"button\" data-dismiss=\"modal\">Close</a>
+	                <a href=\"#\" data-dismiss=\"modal\">Close</a>
 	             </div>
 	        </div>
 	    </div>
